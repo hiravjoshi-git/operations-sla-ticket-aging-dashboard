@@ -1,117 +1,55 @@
-📊 Operations SLA Monitoring & Risk Analysis Dashboard
-📌 Project Overview
+# Operations SLA & Ticket Aging Dashboard (Power BI)
 
-This project focuses on analyzing service desk operations data to monitor SLA performance, ticket aging, and operational risk using Power BI.
+## Overview
+This repository contains a **Power BI dashboard** designed to monitor **SLA compliance, ticket aging, backlog risk, and agent performance** in an operations / support environment.
 
-The dashboard is designed to help operations and support teams:
+The dashboard is built from an **operations manager’s perspective**, focusing on **risk identification, workload pressure, and SLA accountability** rather than decorative reporting.
 
-Identify SLA breaches early
+---
 
-Monitor aging and backlog trends
+## Business Context
+Operations and support teams require a quick, reliable view to answer:
 
-Detect agent and department-level performance issues
+- How many tickets are currently open?
+- Which tickets are overdue beyond SLA?
+- Where is backlog aging increasing?
+- Which agents or departments are contributing to SLA breaches?
+- Where is immediate operational intervention required?
 
-Prioritize high-risk tickets effectively
+This dashboard provides a **single-page, executive-ready view** to support these decisions.
 
-🎯 Objectives
+---
 
-Track open, overdue SLA, and aged tickets
+## Key KPIs
+- Total Tickets  
+- Open Tickets  
+- Overdue Open Tickets (SLA-based)  
+- SLA Compliance %  
+- SLA Breach %  
+- Aged Backlog (8+ Days)
 
-Analyze ticket aging buckets (0–3 days, 8+ days)
+All KPIs are built using **validated DAX measures** and cross-checked against base ticket counts to ensure model reliability.
 
-Measure SLA compliance vs breaches
+---
 
-Identify high-priority aged tickets by department
+## Analysis Covered
+- Ticket aging distribution (recent vs overdue)
+- SLA compliance by aging bucket
+- High-priority aged tickets by department
+- Agent-wise workload and SLA breach analysis
+- SLA performance comparison across agents
 
-Evaluate agent workload and SLA performance
+---
 
-🗂 Dataset Structure
+## Data Model
+- **Fact Table:** Tickets  
+- **Dimension Tables:** Date, Agent, Department, Priority  
 
-Fact Table: Tickets
+The model follows **star schema principles** with clean one-to-many relationships and controlled filter flow.
 
-Key fields:
+---
 
-TicketID
-
-CreatedDate, ClosedDate
-
-Status (Open / In Progress / Closed)
-
-Priority (High / Medium / Low)
-
-AssignedAgent
-
-Department
-
-SLA_Hours
-
-ResolutionHours
-
-Derived columns & measures:
-
-Ticket Age (Days)
-
-Aging Bucket
-
-Overdue SLA Tickets
-
-SLA Compliance %
-
-SLA Breached Tickets
-
-Overdue Aged Tickets
-
-📈 Dashboard Highlights
-🔹 KPI Cards
-
-Total Open Tickets
-
-Overdue SLA Tickets
-
-Overdue Aged Tickets
-
-🔹 Visual Analysis
-
-Tickets by Aging Bucket
-
-SLA Compliance by Ticket Aging
-
-High Priority Aged Tickets by Department
-
-Tickets Handled by Agent
-
-SLA Breaches by Agent
-
-SLA Compliance % by Agent
-
-Each visual is aligned to answer a specific operational question, avoiding unnecessary clutter.
-
-🧠 Key Business Insights
-
-A significant portion of tickets exceed SLA timelines, indicating backlog risk.
-
-High-priority aged tickets are concentrated in specific departments.
-
-SLA breaches are not evenly distributed across agents.
-
-Data supports targeted operational interventions instead of broad assumptions.
-
-🛠 Tools & Technologies
-
-Power BI
-
-DAX
-
-Excel (Data Preparation)
-
-Operations & SLA Analytics Concepts
-
-🚀 Learnings & Takeaways
-
-Practical application of fact-table modeling
-
-Translating raw ticket data into actionable insights
-
-Designing dashboards for operations managers and leadership
-
-Emphasis on clarity, logic, and business relevance
+## Tools Used
+- Power BI Desktop  
+- DAX (CALCULATE, FILTER, DIVIDE, time-based logic)  
+- Microsoft Excel (source dataset)
